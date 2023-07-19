@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace FlightsProject
 {
+    [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
     class Customer : IPoco, IUser
     {
         public Customer(string first_Name, string last_Name, string address, string phone_No, string credit_Card_No, long user_Id)
@@ -16,7 +18,7 @@ namespace FlightsProject
             User_Id = user_Id;
         }
         public long Id { get; set; }
-        public string First_Name{ get; set; }
+        public string First_Name { get; set; }
         public string Last_Name { get; set; }
         public string Address { get; set; }
         public string Phone_No { get; set; }
@@ -55,6 +57,11 @@ namespace FlightsProject
         public override string ToString()
         {
             return $"First_Name :first_Name; Last_Name :last_Name; Address :address; Phone_No :phone_No; Credit_Card_No :credit_Card_No; User_Id :user_Id; ";
+
+        }
+
+        private string GetDebuggerDisplay()
+        {
+            return ToString();
         }
     }
-}

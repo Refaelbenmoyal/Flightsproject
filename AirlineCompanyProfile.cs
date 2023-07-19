@@ -4,8 +4,7 @@ using System.Text;
 
 namespace FlightsProject
 {
-    interface ICountryDAO : IBasicDB<Country>
+    class AirlineCompanyProfile
     {
-
     }
 }

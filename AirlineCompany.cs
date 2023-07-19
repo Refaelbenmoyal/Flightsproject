@@ -12,10 +12,17 @@ namespace FlightsProject
             Country_Id = country_Id;
             User_Id = user_Id;
         }
+
+        public AirlineCompany()
+        {
+        }
+
         public long Id { get; set; }
         public string Name { get; set; }
         public int Country_Id { get; set; }
         public long User_Id { get; set; }
+        public string Password { get; internal set; }
+        public int CountryId { get; internal set; }
 
         public static bool operator ==(AirlineCompany a1, AirlineCompany a2)
         {

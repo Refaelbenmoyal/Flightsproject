@@ -1,4 +1,4 @@
-﻿using Microsoft.Azure.Amqp.Framing;
+﻿using Microsoft;
 using Npgsql;
 using System;
 using System.Collections.Generic;

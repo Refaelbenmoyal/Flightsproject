@@ -2,8 +2,7 @@
 
 namespace FlightsProject
 {
-    public interface IUser
+    internal class BasicAuthenticationAttribute : Attribute
     {
-
     }
 }
