@@ -39,12 +39,9 @@ namespace WebClient
 
             client.BaseAddress = new Uri(URL);
 
-            // Add an Accept header for JSON format.
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-
-            // -------------------------- One ite
             HttpResponseMessage response = client.GetAsync("").Result;  // Blocking call! Program will wait here until a response is received or a timeout occurs.
             if (response.IsSuccessStatusCode)
             {
