@@ -1,0 +1,23 @@
+import Flight from './Flight';
+import React, { Component } from 'react';
+
+class App extends Component {
+  state = {
+    Flight: [
+      Flight destination: "Russia",Date: "December 13", Ticket price: "$300"},
+      Flight destination: "Japan",Date: "December 20", Ticket price: "$400"},
+      Flight destination: "U.S",Date: "December 5", Ticket price: "$500"},
+    ]
+  }
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>hello world!</h1>
+          <Flight flight={this.state.Flight}/>
+        </header>
+      </div>
+    );
+  }
+}
+export default App;
