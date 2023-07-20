@@ -1,0 +1,23 @@
+import React, { Component } from 'react';
+
+class flight extends Component {
+    render() {
+        const { flight } = this.props
+
+        const flightListHtml = flight.map(onecar => 
+            <div key = {onecar.id}>
+                <hr />
+                <p>flight destination: {onecar.flight destination}</p>
+                <p>flight date: {onecar.flight date}</p>
+                <p>ticket price: {onecar.ticket price}</p>
+                <hr />
+            </div>)
+        return (
+            <div>
+              { flightListHtml }
+            </div>
+        )
+
+    }
+}
+export default flight;
