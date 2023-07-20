@@ -1,0 +1,36 @@
+const {createStore} = Redux;
+document.write('hello redux<br/>')
+
+// to string
+function printobj(obj) {
+    document.write(JSON.stringify(obj) + '<br/>')
+}
+
+const init_state = { name: 'USA', time: (new Date()).toISOString(), posts: [] }
+
+function myReducer(state = init_state, action) {
+  document.write('executing reducer...<br/>')
+  document.write('current state:<br/>')
+  printobj(state)
+  //printobj(action)
+  if (action.type == 'ADD_POST') {
+    document.write('add post :<br/>')
+    return {
+      ... state,
+      posts: [...state.posts, action.post]
+    }
+  }
+  return { ...state  }
+}
+
+const store = createStore(myReducer)
+//document.write('state after creating the store:<br/>')
+//printobj(store.getState());
+
+store.subscribe(() => {
+  document.write('store changed event ...<br/>');
+  printobj(store.getState());
+})
+
+store.dispatch( { type: 'ADD_POST', post: 'NICE POST'} )
+store.dispatch( { type: 'ADD_POST', post: 'SECOND POST'} )
